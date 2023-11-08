@@ -1,7 +1,6 @@
 FROM caddy:builder AS builder
 
 LABEL maintainer="gentlehoneylover"
-ENV BUILD_DATE="2-Nov-2023"
 
 RUN xcaddy build \
     --with github.com/caddy-dns/godaddy \
