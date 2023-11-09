@@ -16,7 +16,7 @@ $ echo "hello world" > index.html
 $ docker run -d -p 80:80 \
     -v $PWD/index.html:/usr/share/caddy/index.html \
     -v caddy_data:/data \
-    caddy
+    docker.io/gentlehoneylover/caddy-godaddy-cloudflare:latest
 ...
 $ curl http://localhost/
 hello world
@@ -28,7 +28,7 @@ To override the default `Caddyfile`, you can mount a new one at `/etc/caddy/Cadd
 $ docker run -d -p 80:80 \
     -v $PWD/Caddyfile:/etc/caddy/Caddyfile \
     -v caddy_data:/data \
-    caddy
+    docker.io/gentlehoneylover/caddy-godaddy-cloudflare:latest
 ```
 
 ### Automatic TLS
@@ -40,7 +40,7 @@ $ docker run -d -p 80:80 -p 443:443 -p 443:443/udp \
     -v /site:/srv \
     -v caddy_data:/data \
     -v caddy_config:/config \
-    caddy caddy file-server --domain example.com
+    docker.io/gentlehoneylover/caddy-godaddy-cloudflare:latest caddy file-server --domain example.com
 ```
 
 The key here is that Caddy is able to listen to ports `80` and `443`, both required for the ACME HTTP challenge.
@@ -56,7 +56,7 @@ version: "3.7"
 
 services:
   caddy:
-    image: caddy:<version>
+    image: docker.io/gentlehoneylover/caddy-godaddy-cloudflare:latest
     restart: unless-stopped
     ports:
       - "80:80"
