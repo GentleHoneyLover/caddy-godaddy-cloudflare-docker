@@ -3,14 +3,16 @@ name: Sync README with Docker Hub on git push
 on:
   # run it on push to the default repository branch
   push:
-    branches: [master]
+    branches: 
+      - master
     paths:
-      - "README.md"
+      - README.md
+      - .github/workflows/sync-readme-with-docker-hub-on-push.yml
 
 jobs:
   # define job to build and publish docker image
-  build-and-push-docker-image:
-    name: Build Docker image and push to Docker Hub
+  docker-hub-description:
+    name: Sync GitHub README with Docker Hub description
     # run only when code is compiling and tests are passing
     runs-on: ubuntu-latest
 
@@ -24,7 +26,8 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-          repository: ${{ secrets.DOCKERHUB_USERNAME }}/caddy-godaddy-cloudflare:latest
+          repository: ${{ secrets.DOCKERHUB_USERNAME }}/caddy-godaddy-cloudflare
+          short-description: ${{ github.event.repository.description }}
 
       - name: Pushover notification
         uses: umahmood/pushover-actions@main
