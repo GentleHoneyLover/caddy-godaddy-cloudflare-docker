@@ -6,9 +6,7 @@
 	<a href="https://actions-badge.atrox.dev/gentlehoneylover/caddy-godaddy-cloudflare-docker/goto?ref=master"><img alt="GitHub Actions" src="https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fgentlehoneylover%2Fcaddy-godaddy-cloudflare-docker%2Fbadge%3Fref%3Dmaster&style=flat" /></a>
 </p><br>
 
-A Caddy Docker image with GoDaddy and Cloudflare DNS modules added. Built on the official Caddy image and following their documentation — see [Caddy image on Docker Hub](https://hub.docker.com/_/caddy) for details. The usage and configuration of the container is the same as the official Caddy one. 
-
-You can review the Dockerfile [here](https://github.com/GentleHoneyLover/caddy-godaddy-cloudflare-docker/blob/master/Dockerfile). Please report all issues [here](https://github.com/GentleHoneyLover/caddy-godaddy-cloudflare-docker/issues).
+A Caddy Docker image with GoDaddy and Cloudflare DNS modules added. Built on the official Caddy image and following their documentation — see [Caddy image on Docker Hub](https://hub.docker.com/_/caddy) for details. The usage and configuration of the container is the same as the official Caddy one. You can review the Dockerfile [here](https://github.com/GentleHoneyLover/caddy-godaddy-cloudflare-docker/blob/master/Dockerfile).
 
 <p align="center">
   <img width="600" src="https://raw.githubusercontent.com/docker-library/docs/7f3881a28c29ed29bb1a38681b95bd785a8a6da5/caddy/logo.png" alt="Caddy"><br><br>
