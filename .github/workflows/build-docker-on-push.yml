@@ -51,21 +51,6 @@ jobs:
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
 
-      - name: Build image and push to Docker Hub
-        uses: docker/build-push-action@v2
-        with:
-          # relative path to the place where source code with Dockerfile is located
-          context: .
-          # Note: tags has to be all lower-case
-          platforms: linux/amd64,linux/arm64,linux/arm/v7
-          tags: |
-            docker.io/gentlehoneylover/caddy-godaddy-cloudflare:latest 
-          # build on feature branches, push only on main branch
-          push: ${{ github.ref == 'refs/heads/master' }}
-
-      - name: Image digest
-        run: echo ${{ steps.docker_build.outputs.digest }}
-
       - name: Pushover notification
         uses: umahmood/pushover-actions@main
         env:
