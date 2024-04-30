@@ -52,7 +52,7 @@ jobs:
           # relative path to the place where source code with Dockerfile is located
           context: .
           # Note: tags has to be all lower-case
-          platforms: linux/amd64,linux/arm64 #,linux/arm/v7
+          platforms: linux/amd64,linux/arm64,linux/arm/v7
           tags: |
             docker.io/${{ secrets.DOCKERHUB_USERNAME }}/caddy-godaddy-cloudflare:latest
           # build on all branches, push only on master branch
