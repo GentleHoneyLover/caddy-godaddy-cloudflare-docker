@@ -59,8 +59,6 @@ See [Caddy's docs](https://caddyserver.com/docs/automatic-https) for more inform
 If you prefer to use `docker-compose` to run your stack, here's a sample service definition.
 
 ```yaml
-version: "3.7"
-
 services:
   caddy:
     image: docker.io/gentlehoneylover/caddy-godaddy-cloudflare:latest
@@ -74,9 +72,4 @@ services:
       - $PWD/site:/srv
       - caddy_data:/data
       - caddy_config:/config
-
-volumes:
-  caddy_data:
-    external: true
-  caddy_config:
 ```
